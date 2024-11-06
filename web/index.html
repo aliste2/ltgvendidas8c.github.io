@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Seguro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            margin: 0;
+        }
+        .login-container {
+            border-radius: 100%;
+            color: white;
+        }
+        input[type="password"] {
+            width: 94.5%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 0px;
+            border-radius: 50px;
+            text-align: center;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Acceso Seguro</h2>
+    <p>Introduce el código de seguridad para continuar:</p>
+    <input type="password" id="securityCode" placeholder="Código de seguridad">
+    <button onclick="checkCode()">Ingresar</button>
+    <p class="error" id="errorMessage"></p>
+</div>
+
+<script>
+    function checkCode() {
+        const correctCode = "challwatufe33";
+        const enteredCode = document.getElementById("securityCode").value;
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (enteredCode === correctCode) {
+            window.location.href = "web.html";
+        } else {
+            errorMessage.textContent = "Código incorrecto, intenta de nuevo.";
+        }
+    }
+</script>
+
+</body>
+</html>
